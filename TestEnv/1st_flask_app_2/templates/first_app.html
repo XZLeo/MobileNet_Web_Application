@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <title>First app</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+
+
+  
+  <body>
+
+{% from "_formhelpers.html" import render_field %}
+
+<div>What's your name?</div>
+<form method=post action="/hello"> 
+
+  <dl>
+	  {{ render_field(form.sayhello) }}   <!--form是传入模板的参数，HelloForm类的实例form具有sayhello方法-->
+  </dl>
+
+  <input type=submit value='Say Hello' name='submit_btn'>
+
+</form>
+
+  </body>
+</html>
