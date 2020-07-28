@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask上传图片演示</title>
+</head>
+<body>
+    <h1>上传图片</h1>
+    <img src="{{ url_for('static', filename = fname) }}" align="middle" />
+    <p>对上传照片的分类为:</p>
+</body>
+</html>
+
+<!-- 一个url可以对应多个html -->

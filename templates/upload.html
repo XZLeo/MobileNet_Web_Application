@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<title>Upload File</title>
+<h1>Upload new File</h1>
+<form action="" method="post" enctype="multipart/form-data">
+  <p><input type="file" name="file">
+     <input type="submit" value="Upload">
+</form>
+<body>
+  {% for msg in get_flashed_messages() %}
+  <p>{{ msg }}</p>
+  {% endfor %}
+</body>
