@@ -8,7 +8,8 @@
 <body>
     <h1>上传图片</h1>
     <img src="{{ url_for('static', filename = fname) }}" align="middle" />
-    <p>对上传照片的分类为:</p>
+    <p>对上传照片的分类为:{{preds[0]}}</p>
+    <p>分类概率为:{{preds[1]}}</p>
 </body>
 </html>
 
