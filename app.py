@@ -2,8 +2,12 @@ import os
 from flask import Flask, render_template, request, flash, make_response, redirect, url_for
 from werkzeug.utils import secure_filename
 from PIL import Image
-from repredict import repredict
 from shutil import move
+from shutil import Error as SError
+from threading import Thread
+
+from repredict import repredict
+from TryMobile import abc
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '123456'
@@ -69,19 +73,29 @@ def update(fileName):
 
 @app.route('/thanks', methods=['POST', 'GET'])
 def thanks():
-    print("2\n")
-    category = request.form["feedback_button"] #True or False
+    """怎么把上个页面显示的预测种类，返回到这个函数中"""
+    category = request.form["Correctness"] #True or False
+    prediction = request.form['prediction']
+    fileName = request.form['filename']
+    print(category, prediction, fileName)
     x = {"Cat", "Dog"}
     if category == 'Incorrect':
-        result["prediction"] = x - {result["prediction"]} #猫变狗，狗变猫
+       prediction_set  = x - {prediction} #猫变狗，狗变猫
+       prediction = prediction_set.pop()
     src = './static/{}'.format(fileName)
-    dst = './static/images/{}'.format(result["prediction"])
+    dst = './static/images/{}'.format(prediction)
+    print(src, dst)
     try:
-        move(src, dst)
-    except FileNotFoundError:
         os.mkdir(dst)
-        move(src, dst)           #在这些函数中train的话，会变得特别慢，能单独开一个进程么
+    except FileExistsError:
+        pass
+    try:
+        move(src, dst) #上传同名照片会报错
+    except SError:
+        flash("File arealdy exists or has the same name")
     #调用update去更新模型
+    a=1
+    Thread(target=abc, args=()).start()
     return render_template('thanks.html')
 
 
@@ -99,7 +113,7 @@ if __name__ == '__main__':
 #redirect不能传值，但url_for可以传值
 
 #predict和trian的过程都太慢，需要异步请求？
-#异步请求or多线程？
+#多线程
 
 
 

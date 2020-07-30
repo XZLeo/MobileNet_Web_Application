@@ -7,6 +7,13 @@ from keras.preprocessing.image import ImageDataGenerator
 import numpy as np
 import time
 from plotAccLoss import plotLossAcc
+from time import sleep
+
+def abc():
+    """sleep若干秒，完全是为了验证"""
+    sleep(10)
+    print("子线程结束")
+
 
 def reTrain():
     #迁移训练模型

@@ -19,6 +19,8 @@
             <input type="radio" value="Correct" name='Correctness'> Correct<br>
             <input type="radio" value="Incorrect" name='Correctness'> Incorrect<br>
             <input type=submit value="确认" name='feedback_button'>
+            <input type="hidden" value="{{ result['prediction'] }}" name='prediction'>
+            <input type="hidden" value="{{ fname }}" name='filename'>
         </form>
     </div>
 </body>

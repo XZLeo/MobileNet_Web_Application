@@ -8,10 +8,19 @@
 
   <body>
     <h3>Thanks for your feedback!</h3>
-    
-    <form action="/" >
-      <input type=submit value="再次上传" name='return_button'>
-    </form>
+    <div>
+      <form action="/" >
+        <input type=submit value="再次上传" name='return_button'>
+      </form>
+    </div>
+
+    <div>
+      {% for msg in get_flashed_messages() %}
+      <p>{{ msg }}</p>
+      {% endfor %}
+    </div>
+
+
   </body>
 
 </html>
