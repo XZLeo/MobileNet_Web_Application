@@ -6,11 +6,23 @@
     <title>Flask上传图片演示</title>
 </head>
 <body>
-    <h1>上传图片</h1>
-    <img src="{{ url_for('static', filename = fname) }}" align="middle" />
-    <p>对上传照片的分类为:{{preds[0]}}</p>
-    <p>分类概率为:{{preds[1]}}</p>
+    <div>
+        <h1>上传图片</h1>
+        <img src="{{ url_for('static', filename = fname) }}" />
+        <p>对上传照片的分类为:{{result["prediction"]}}</p>
+        <p>分类概率为:{{result["probability"]}}</p>
+    </div>
+    
+
+    <div id='button'>
+        <form action="/thanks" method="POST">
+            <input type="radio" value="Correct" name='Correctness'> Correct<br>
+            <input type="radio" value="Incorrect" name='Correctness'> Incorrect<br>
+            <input type=submit value="确认" name='feedback_button'>
+        </form>
+    </div>
 </body>
 </html>
 
 <!-- 一个url可以对应多个html -->
+<!-- 表单提交的值在request对象中 -->
