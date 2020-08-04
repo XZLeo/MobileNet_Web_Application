@@ -18,7 +18,7 @@ def plotLossAcc(history):
     plt.plot(epochs, loss, 'b', label='Trainning Loss')
     plt.plot(epochs, val_loss, 'r', label='Validation Loss')
     plt.title('Loss')
-    plt.legend() #?
+    plt.legend() 
 
     plt.show()
     return

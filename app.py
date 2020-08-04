@@ -94,7 +94,6 @@ def thanks():
     except SError:
         flash("File arealdy exists or has the same name")
     #调用update去更新模型
-    a=1
     Thread(target=abc, args=()).start()
     return render_template('thanks.html')
 
