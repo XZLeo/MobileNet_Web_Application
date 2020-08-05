@@ -12,11 +12,6 @@ from TryMobile import abc
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '123456'
 
-# @app.route('/')
-# def index():
-#     return "Hello, User!"
-
-
 #允许上传type
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', "PNG", "JPG", 'JPEG']) #大写的.JPG是不允许的
 
@@ -94,7 +89,7 @@ def thanks():
     except SError:
         flash("File arealdy exists or has the same name")
     #调用update去更新模型
-    Thread(target=abc, args=()).start()
+    Thread(target=abc, args=()).start()  #这里没写完
     return render_template('thanks.html')
 
 
@@ -103,16 +98,12 @@ if __name__ == '__main__':
 
 #用secure_filename获取中文文件名时,中文会被省略。
 #原因：secure_filename()函数只返回ASCII字符，非ASCII字符会被过滤掉
-#解决方案；安装pypinyin包，将汉字文件名转换成拼音
 
 #flash是要在上传页面配合模板的get_flash使用的
 
 #flask要求视图函数必须返回字符串或者模板
 
 #redirect不能传值，但url_for可以传值
-
-#predict和trian的过程都太慢，需要异步请求？
-#多线程
 
 
 
