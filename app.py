@@ -7,7 +7,7 @@ from shutil import Error as SError
 from threading import Thread
 
 from repredict import repredict
-from TryMobile import abc
+from TryMobile import update
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '123456'
@@ -85,11 +85,11 @@ def thanks():
     except FileExistsError:
         pass
     try:
-        move(src, dst) #上传同名照片会报错
+        move(src, dst) #上传同名照片会报错   #这里能在移动的同时重命名吗？
     except SError:
         flash("File arealdy exists or has the same name")
     #调用update去更新模型
-    Thread(target=abc, args=()).start()  #这里没写完
+    Thread(target=update, args=()).start()  #这里没写完
     return render_template('thanks.html')
 
 
