@@ -1,12 +1,10 @@
 #重新加载训练结果并做预测
 import os
+import numpy as np
 from keras.models import load_model
 from keras.preprocessing import image
 from keras.utils.generic_utils import CustomObjectScope
-from keras.applications.mobilenet import relu6
-from keras.applications.mobilenet import DepthwiseConv2D
-import numpy as np
-from keras.applications.mobilenet import preprocess_input, decode_predictions
+from keras.applications.mobilenet import relu6, DepthwiseConv2D, preprocess_input
 
 
 def repredict(filename):
@@ -15,7 +13,7 @@ def repredict(filename):
     #print(model.summary())
     #加载单个图片用于预测
     #img_path = os.path.join('./static/images', filename) #cat为0，dog为1
-    img_path = './static/images' + filename
+    img_path = './static/images' + filename   #???????????改成这样会不会影响使用？
     #print(img_path)
     img = image.load_img(img_path, target_size=(224, 224))
     x = image.img_to_array(img)
