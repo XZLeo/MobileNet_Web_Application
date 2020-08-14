@@ -1,6 +1,11 @@
 # MobileNet_Web_Application
-<<<<<<< HEAD
 Use Flask framework and fine-tuning MobileNet weights from Keras to build a simple AI web application.
+
+## Environment
+keras                     2.0.8  
+tensorflow                1.2.1  
+flask                     0.12.2  
+python                    3.5.2
 
 ## Run the app
 1. git clone this repo
