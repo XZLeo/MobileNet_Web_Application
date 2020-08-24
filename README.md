@@ -32,23 +32,23 @@ Note: Use `export` instead of `set` on Linux OS. There should be no space around
 The app allows users to upload jpg or png images of cats or dogs and returns the classification and probability. It allows the user to provide feedback about the classification and use it to update the weights of MobileNet.
 
 ## Structure
-│  app.py
-│  repredict.py                       load weights to classify
-│  TryMobile.py                       Update weights
-├─static
-│  │  cats_dog_mobileNet.h5           weights after transfer learning
-│  │  files_cat.npy
-│  │  files_dog.npy                   numpy array to save paths of newly labeled images
-│  │  style.css                        
-│  └─images
-│      │                              save unlabeled input images
-│      ├─Cat
-│      │                              save images labeled as 'Cat' for updating weights
-│      └─Dog
-├─templates
-│      show.html                      the interface to upload images
-│      thanks.html                    
-│      upload.html                    show the classification result and users can give feedbacks
+│  app.py  
+│  repredict.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;load weights to classify  
+│  TryMobile.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Update weights  
+├─static  
+│  │  cats_dog_mobileNet.h5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;weights after transfer learning  
+│  │  files_cat.npy  
+│  │  files_dog.npy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;numpy array to save paths of newly labeled images  
+│  │  style.css  
+│  └─images  
+│      │             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                 save unlabeled input images  
+│      ├─Cat  
+│      │             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                 save images labeled as 'Cat' for updating weights  
+│      └─Dog  
+├─templates  
+│      show.html          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            the interface to upload images  
+│      thanks.html  
+│      upload.html        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            show the classification result and users can give feedbacks  
 └─uploads                             
 
 
