@@ -41,14 +41,14 @@ The app allows users to upload jpg or png images of cats or dogs and returns the
 │  │  files_dog.npy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;numpy array to save paths of newly labeled images  
 │  │  style.css  
 │  └─images  
-│      │             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                 save unlabeled input images  
+│      │             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                 save unlabeled input images  
 │      ├─Cat  
-│      │             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                 save images labeled as 'Cat' for updating weights  
+│      │             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                 save images labeled as 'Cat' for updating weights  
 │      └─Dog  
 ├─templates  
-│      show.html          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            the interface to upload images  
+│      show.html          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            the interface to upload images  
 │      thanks.html  
-│      upload.html        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            show the classification result and users can give feedbacks  
+│      upload.html        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            show the classification result and users can give feedbacks  
 └─uploads                             
 
 
