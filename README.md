@@ -30,6 +30,17 @@ Note: Use `export` instead of `set` on Linux OS. There should be no space around
 
 ## Functions
 The app allows users to upload jpg or png images of cats or dogs and returns the classification and probability. It allows the user to provide feedback about the classification and use it to update the weights of MobileNet.
+1. Upload the file
+<img src="static/1.jpg" width=550 />  
+
+Only support files with English name. If the name is in Chinese, it will show a hint.  
+<img src="static/2.png" width=550 />  
+
+2. It returns the classification result and probability. You can also use feedback button to help immprove the model.  
+<img src="static/3.png" width=550 />   
+
+3. Thanks for the feedback  
+<img src="static/4.png" width=550 /> 
 
 ## Structure
 │  app.py  
